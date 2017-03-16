@@ -44,6 +44,8 @@ articleView.handleCategoryFilter = function() {
     if ($(this).val()) {
       $('article').hide();
       $('article[data-category="' + $(this).val() + '"]').show();
+      $('tab-content[id="' + $('data-content') + '"]');
+      console.log($('tab-content').attr());
     }
     else{
       $('article').show();
