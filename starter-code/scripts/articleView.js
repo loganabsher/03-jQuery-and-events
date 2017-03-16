@@ -44,8 +44,6 @@ articleView.handleCategoryFilter = function() {
     if ($(this).val()) {
       $('article').hide();
       $('article[data-category="' + $(this).val() + '"]').show();
-      $('tab-content[id="' + $('data-content') + '"]');
-      console.log($('tab-content').attr());
     }
     else{
       $('article').show();
@@ -62,7 +60,6 @@ articleView.handleMainNav = function () {
       2. Fade in the single .tab-content section that is
         associated with the .tab element's data-content attribute.
     */
-    console.log('click');
     $('.tab-content').hide();
     $('#' + $(this).attr('data-content')).fadeIn();
     // $('.tab-content[data-content="' + $(this).val('#') + '"]').show();
@@ -78,12 +75,9 @@ articleView.setTeasers = function() {
     1. Prevent the default action of a link.
     2. Reveal everything in that particular ow.
     3. Hide that read-on link!
-
     // STRETCH GOAl!: change the 'Read On' link to 'Show Less'
   */
-  $('.read-on').on('click', function() {
-    console.log('click');
-    console.log($(this).parent());
+  $('#articles').on('click', '.read-on', function() {
     $(this).parent().find('*').show();
     $(this).hide();
   });
