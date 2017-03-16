@@ -64,7 +64,6 @@ articleView.handleMainNav = function () {
     $('.tab-content').hide();
     $('#' + $(this).attr('data-content')).fadeIn();
     // $('.tab-content[data-content="' + $(this).val('#') + '"]').show();
-    console.log('#' + $(this).attr('data-content'));
   });
   $('.main-nav .tab:first').click();
 };
@@ -80,9 +79,14 @@ articleView.setTeasers = function() {
 
     // STRETCH GOAl!: change the 'Read On' link to 'Show Less'
   */
-  console.log(this);
-  // $('#' + (this).attr('data-content')).show('p');
+  $('.read-on').on('click', function() {
+    console.log('click');
+    console.log($(this).parent());
+    $(this).parent().find('*').show();
+    $(this).hide();
+  });
 };
+  // $('#' + (this).attr('data-content')).show('p');
 articleView.populateFilters();
 articleView.handleAuthorFilter();
 articleView.handleCategoryFilter();
